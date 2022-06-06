@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'Rounded';
+  src: url("/fonts/MPLUSRounded1c-Regular.ttf");
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: Rounded;
+}
