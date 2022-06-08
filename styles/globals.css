@@ -3,6 +3,10 @@
   src: url("/fonts/MPLUSRounded1c-Regular.ttf");
 }
 
+:root {
+  --primary: #FF91AF;
+}
+
 * {
   margin: 0px;
   padding: 0px;
