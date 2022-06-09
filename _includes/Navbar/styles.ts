@@ -18,7 +18,7 @@ export const NavList = styled.ul`
   width: 300px;
   margin: auto 0px;
 
-  list-style: none; 
+  list-style: none;
   display: flex;
   justify-content: space-between;
 `;

@@ -1,5 +1,5 @@
-import Link from 'next/link'
-import * as S from './styles'
+import Link from 'next/link';
+import * as S from './styles';
 
 const Navbar = () => {
   return (
@@ -24,6 +24,6 @@ const Navbar = () => {
       </S.NavList>
     </S.Container>
   );
-}
+};
 
 export default Navbar;
