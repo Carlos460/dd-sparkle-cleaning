@@ -1,10 +1,16 @@
 import styled from 'styled-components';
 
-export const Section = styled.div`
+interface ISectionProps {
+  backgroundColor?: string;
+}
+
+export const Section = styled.div<ISectionProps>`
   height: 100vh;
+  min-height: 725px;
   width: 100%;
   position: relative;
   overflow: hidden;
+  background-color: ${(props) => props.backgroundColor || 'transparent'};
 `;
 
 export const Container = styled.div`
@@ -12,10 +18,15 @@ export const Container = styled.div`
   width: 100%;
 `;
 
-export const Title = styled.h1`
+interface ITitleProps {
+  textColor?: string;
+}
+
+export const Title = styled.h1<ITitleProps>`
   width: 600px;
   margin-top: 100px;
 
+  color: ${(props) => props.textColor || 'black'};
   font-family: sans-serif;
   font-size: 65px;
   font-weight: 600;
@@ -43,16 +54,23 @@ export const Title = styled.h1`
     line-height: 50px;
   }
 `;
-export const SubTitle = styled.h2`
+
+interface ISubTitleProps {
+  textColor?: string;
+  textSize?: string;
+  lineHieght?: string;
+}
+
+export const SubTitle = styled.h2<ISubTitleProps>`
   width: 400px;
   margin: 20px 0px 0px;
 
-  font-size: 20px;
   font-weight: 500;
-  line-height: 25px;
+  color: ${(props) => props.textColor || 'black'};
+  font-size: ${(props) => props.textSize || '20px'};
+  line-height: ${(props) => props.lineHieght || '25px'};
   /* antd lg screens */
   @media (max-width: 768px) {
-    width: 400px;
     margin: 12px 0px 0px;
 
     font-size: 18px;

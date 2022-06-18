@@ -2,9 +2,10 @@
   "compilerOptions": {
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
-    "baseUrl":"./",
+    "baseUrl": "./",
     "paths": {
-      "@includes/*": ["_includes/*"]
+      "@includes/*": ["_includes/*"],
+      "@sections/*": ["_sections/*"]
     },
     "allowJs": true,
     "skipLibCheck": true,
