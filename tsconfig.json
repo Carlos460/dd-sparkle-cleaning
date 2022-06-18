@@ -5,7 +5,8 @@
     "baseUrl": "./",
     "paths": {
       "@includes/*": ["_includes/*"],
-      "@sections/*": ["_sections/*"]
+      "@sections/*": ["_sections/*"],
+      "@styles/*": ["styles/*"]
     },
     "allowJs": true,
     "skipLibCheck": true,

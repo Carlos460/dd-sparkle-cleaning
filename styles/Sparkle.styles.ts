@@ -77,7 +77,6 @@ export const SubTitle = styled.h2<ISubTitleProps>`
   }
 `;
 export const CtaButton = styled.button`
-  width: 200px;
   height: 45px;
   margin: 20px 0px 0px;
   font-size: 17px;
@@ -87,7 +86,7 @@ export const CtaButton = styled.button`
   border: solid 2px var(--primary);
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.4s, color 0.4s;
+  box-shadow: var(--primary);
   &:hover {
     background-color: rgba(0, 0, 0, 0);
     color: var(--primary);
