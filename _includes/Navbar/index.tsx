@@ -4,7 +4,11 @@ import * as S from './styles';
 const Navbar = () => {
   return (
     <S.Container>
-      <S.BrandName>D.D. Sparkle Cleaning</S.BrandName>
+      <S.BrandName>
+        <Link href={`/`}>
+          <a>D.D. Sparkle Cleaning</a>
+        </Link>
+      </S.BrandName>
       <S.NavList>
         <S.NavLink>
           <Link href="/about">

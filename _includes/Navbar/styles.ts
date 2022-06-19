@@ -12,6 +12,12 @@ export const BrandName = styled.h1`
   font-size: 20px;
   font-family: sans-serif;
   margin: auto 0px;
+  & > a {
+    color: black;
+  }
+  & > a:hover {
+    color: var(--primary);
+  }
 `;
 
 export const NavList = styled.ul`
@@ -29,6 +35,6 @@ export const NavLink = styled.li`
     text-decoration: none;
   }
   & > a:hover {
-    color: #000000;
+    color: var(--primary);
   }
 `;
