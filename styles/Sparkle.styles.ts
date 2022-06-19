@@ -13,11 +13,6 @@ export const Section = styled.div<ISectionProps>`
   background-color: ${(props) => props.backgroundColor || 'transparent'};
 `;
 
-export const Container = styled.div`
-  min-height: 60%;
-  width: 100%;
-`;
-
 interface ITitleProps {
   textColor?: string;
 }
@@ -76,25 +71,14 @@ export const SubTitle = styled.h2<ISubTitleProps>`
     font-size: 18px;
   }
 `;
-export const CtaButton = styled.button`
-  height: 45px;
-  margin: 20px 0px 0px;
-  font-size: 17px;
 
-  color: white;
-  background-color: var(--primary);
-  border: solid 2px var(--primary);
-  border-radius: 4px;
-  cursor: pointer;
-  box-shadow: var(--primary);
-  &:hover {
-    background-color: rgba(0, 0, 0, 0);
-    color: var(--primary);
-  }
-  &:active {
-    background-color: var(--primary);
-    color: white;
-  }
+export const Wave = styled.div`
+  width: 100%;
+  height: 250px;
+  background-image: url('/wave-1.svg');
+  background-size: cover;
+  position: absolute;
+  bottom: 0px;
 `;
 
 export const ImageBubble = styled.div`
@@ -132,13 +116,4 @@ export const ImageBubble = styled.div`
     background-position: center;
     border-radius: 0px;
   }
-`;
-
-export const HeaderWave = styled.div`
-  width: 100%;
-  height: 250px;
-  background-image: url('/wave-1.svg');
-  background-size: cover;
-  position: absolute;
-  bottom: 0px;
 `;
