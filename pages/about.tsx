@@ -5,8 +5,6 @@ import AboutUs from "@sections/AboutUs";
 
 import { Row, Col } from "antd";
 
-import * as S from "../styles/Home.styles";
-
 const About: NextPage = () => {
   return (
     <>
