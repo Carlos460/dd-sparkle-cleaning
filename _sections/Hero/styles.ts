@@ -12,6 +12,7 @@ export const CtaButton = styled.button`
   border-radius: 4px;
   cursor: pointer;
   box-shadow: var(--primary);
+  transition: background-color 0.4s ease, color 0.4s ease;
   &:hover {
     background-color: rgba(0, 0, 0, 0);
     color: var(--primary);
