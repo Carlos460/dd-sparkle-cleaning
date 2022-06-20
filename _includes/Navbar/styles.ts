@@ -8,7 +8,7 @@ export const Container = styled.div`
   justify-content: space-between;
 `;
 
-export const BrandName = styled.h1`
+export const BrandName = styled.div`
   font-size: 20px;
   font-family: sans-serif;
   margin: auto 0px;

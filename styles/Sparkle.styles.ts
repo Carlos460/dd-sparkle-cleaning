@@ -76,7 +76,7 @@ export const SubTitle = styled.h2<ISubTitleProps>`
 
 export const Wave = styled.div`
   width: 100%;
-  height: 250px;
+  height: 200px;
   background-image: url('/wave-1.svg');
   background-size: cover;
   position: absolute;

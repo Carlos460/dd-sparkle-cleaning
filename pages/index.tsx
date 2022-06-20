@@ -10,8 +10,8 @@ import WorkShowcase from '@sections/WorkShowcase';
 // Components
 import * as S from '@styles/Sparkle.styles';
 import Footer from '@includes/Footer';
-import Link from 'next/link';
 import Hero from '@sections/Hero';
+import Testimonials from '@sections/Testimonials';
 
 const Home: NextPage = () => {
   return (
@@ -38,6 +38,11 @@ const Home: NextPage = () => {
         </S.Section>
         <S.Section backgroundColor={`var(--primary)`}>
           <WorkShowcase />
+        </S.Section>
+        <S.Section>
+          <Testimonials />
+          <S.Wave style={{ top: '0px', transform: 'scaleY(-1)' }} />
+          <S.Wave />
         </S.Section>
         <Footer />
       </main>
