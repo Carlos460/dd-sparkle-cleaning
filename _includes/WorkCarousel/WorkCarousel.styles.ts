@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const Conatiner = styled.div`
   position: relative;
   width: 680px;
-  margin-top: 100px;
 
   @media (max-width: 1000px) {
     width: 100%;
@@ -13,8 +12,8 @@ export const Conatiner = styled.div`
 export const WorkImage = styled.div`
   height: 500px;
   background-image: url('clean_glass.webp');
-  background-size: cover;
-  background-position: 0px -300px;
+  background-size: center;
+  background-position: 0px 700px;
   @media (max-width: 1000px) {
     height: 400px;
   }

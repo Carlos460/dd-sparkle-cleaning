@@ -5,9 +5,9 @@ interface ISectionProps {
 }
 
 export const Section = styled.div<ISectionProps>`
-  height: 100vh;
-  min-height: 725px;
+  min-height: 100vh;
   width: 100%;
+
   position: relative;
   overflow: hidden;
   background-color: ${(props) => props.backgroundColor || 'transparent'};
@@ -15,6 +15,8 @@ export const Section = styled.div<ISectionProps>`
 
 interface ITitleProps {
   textColor?: string;
+  textSize?: string;
+  lineHieght?: string;
 }
 
 export const Title = styled.h1<ITitleProps>`
