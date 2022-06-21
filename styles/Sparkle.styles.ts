@@ -5,21 +5,18 @@ interface ISectionProps {
 }
 
 export const Section = styled.div<ISectionProps>`
-  height: 100vh;
-  min-height: 725px;
+  min-height: 100vh;
   width: 100%;
+
   position: relative;
   overflow: hidden;
   background-color: ${(props) => props.backgroundColor || 'transparent'};
 `;
 
-export const Container = styled.div`
-  min-height: 60%;
-  width: 100%;
-`;
-
 interface ITitleProps {
   textColor?: string;
+  textSize?: string;
+  lineHieght?: string;
 }
 
 export const Title = styled.h1<ITitleProps>`
@@ -76,26 +73,14 @@ export const SubTitle = styled.h2<ISubTitleProps>`
     font-size: 18px;
   }
 `;
-export const CtaButton = styled.button`
-  width: 200px;
-  height: 45px;
-  margin: 20px 0px 0px;
-  font-size: 17px;
 
-  color: white;
-  background-color: var(--primary);
-  border: solid 2px var(--primary);
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.4s, color 0.4s;
-  &:hover {
-    background-color: rgba(0, 0, 0, 0);
-    color: var(--primary);
-  }
-  &:active {
-    background-color: var(--primary);
-    color: white;
-  }
+export const Wave = styled.div`
+  width: 100%;
+  height: 200px;
+  background-image: url('/wave-1.svg');
+  background-size: cover;
+  position: absolute;
+  bottom: 0px;
 `;
 
 export const ImageBubble = styled.div`
@@ -133,13 +118,4 @@ export const ImageBubble = styled.div`
     background-position: center;
     border-radius: 0px;
   }
-`;
-
-export const HeaderWave = styled.div`
-  width: 100%;
-  height: 250px;
-  background-image: url('/wave-1.svg');
-  background-size: cover;
-  position: absolute;
-  bottom: 0px;
 `;

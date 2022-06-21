@@ -2,11 +2,16 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import Navbar from '@includes/Navbar';
 
-import { Row, Col } from 'antd';
+import { Row, Col, Button } from 'antd';
 
-import * as S from '../styles/Home.styles';
-import WorkCarousel from '@includes/WorkCarousel';
+// Sections
+import WorkShowcase from '@sections/WorkShowcase';
+
+// Components
+import * as S from '@styles/Sparkle.styles';
 import Footer from '@includes/Footer';
+import Hero from '@sections/Hero';
+import Testimonials from '@sections/Testimonials';
 
 const Home: NextPage = () => {
   return (
@@ -25,43 +30,19 @@ const Home: NextPage = () => {
           </Row>
           <Row justify="center">
             <Col xs={22} sm={18} lg={20} xxl={14}>
-              <S.Container>
-                <S.Title>
-                  Reliable <span style={{ color: '#FF91AF' }}>Cleaning</span>{' '}
-                  Service
-                </S.Title>
-                <S.SubTitle>
-                  Full of experience and good references, cleaning apartments,
-                  homes, and offices!
-                </S.SubTitle>
-                <S.CtaButton>Schedule Appointment</S.CtaButton>
-              </S.Container>
+              <Hero />
             </Col>
           </Row>
           <S.ImageBubble />
-          <S.HeaderWave />
+          <S.Wave />
         </S.Section>
         <S.Section backgroundColor={`var(--primary)`}>
-          <Row justify="center">
-            <Col xs={22} sm={18} lg={20} xxl={14}>
-              <S.Title textColor={`white`}>Our Work</S.Title>
-              <Row justify="center">
-                <Col>
-                  <WorkCarousel />
-                </Col>
-                <Col xs={12} sm={12} lg={6}>
-                  <div style={{ display: 'flex', height: '100%' }}>
-                    <div style={{ margin: 'auto 20px' }}>
-                      <h1>
-                        We clean apartments, family homes, offices, and much
-                        more!
-                      </h1>
-                    </div>
-                  </div>
-                </Col>
-              </Row>
-            </Col>
-          </Row>
+          <WorkShowcase />
+        </S.Section>
+        <S.Section>
+          <Testimonials />
+          <S.Wave style={{ top: '0px', transform: 'scaleY(-1)' }} />
+          <S.Wave />
         </S.Section>
         <Footer />
       </main>
