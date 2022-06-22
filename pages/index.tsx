@@ -23,11 +23,7 @@ const Home: NextPage = () => {
       </Head>
       <main>
         <S.Section>
-          <Row justify="center">
-            <Col xs={22} sm={18} lg={20} xxl={14}>
-              <Navbar />
-            </Col>
-          </Row>
+          <Navbar />
           <Row justify="center">
             <Col xs={22} sm={18} lg={20} xxl={14}>
               <Hero />
