@@ -81,6 +81,9 @@ export const Wave = styled.div`
   background-size: cover;
   position: absolute;
   bottom: 0px;
+  @media (max-width: 800px ) {
+    height: 100px;
+  }
 `;
 
 export const ImageBubble = styled.div`
