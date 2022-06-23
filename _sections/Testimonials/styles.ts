@@ -4,6 +4,7 @@ export const Wrapper = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
+  margin: 25px 0px;
 `;
 
 export const Container = styled.div`
@@ -25,8 +26,6 @@ export const Title = styled.h1`
 `;
 
 export const TestimonialWrapper = styled.div`
-  margin: 10px 0px;
-
   display: flex;
   flex-direction: column;
 `;
