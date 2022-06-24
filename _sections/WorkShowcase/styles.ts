@@ -1,8 +1,14 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  height: 100vh;
   width: 100%;
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  @media (max-width: 800px) {
+    margin: 25px 0px;
+  }
 `;
 
 export const ContentWrapper = styled.div`
@@ -32,9 +38,25 @@ export const RightContent = styled.div`
   }
 `;
 
+export const Title = styled.h1`
+  margin: 0px;
+
+  color: white;
+  font-family: sans-serif;
+  font-size: 125px;
+  font-weight: 700;
+  @media (max-width: 800px) {
+    font-size: 70px;
+    text-align: center;
+  }
+`;
+
 export const Text = styled.h2`
   color: white;
   font-size: 30px;
+  @media (max-width: 800px) {
+    font-size: 20px;
+  }
 `;
 
 export const OutlinedButton = styled.button`
