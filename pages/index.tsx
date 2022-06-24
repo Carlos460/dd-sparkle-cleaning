@@ -33,7 +33,11 @@ const Home: NextPage = () => {
           <S.Wave />
         </S.Section>
         <S.Section backgroundColor={`var(--primary)`}>
-          <WorkShowcase />
+          <Row align='middle' justify="center" style={{height: '100%'}}>
+            <Col xs={22} sm={18} lg={20} xxl={14}>
+              <WorkShowcase />
+            </Col>
+          </Row>
         </S.Section>
         <S.Section>
           <Testimonials />
