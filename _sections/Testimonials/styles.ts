@@ -36,7 +36,7 @@ export const ProfileImage = styled.div`
   border-radius: 150px;
   margin: 0px auto 20px;
 
-  background-image: url('/photos/profile.jpg');
+  background-image: url('/photos/profile.webp');
   background-size: cover;
 `;
 
