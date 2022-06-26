@@ -19,6 +19,7 @@ export const Header = styled.div`
   align-items: end;
   height: 20%;
 
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 70px;
   font-weight: 600;
 `;
