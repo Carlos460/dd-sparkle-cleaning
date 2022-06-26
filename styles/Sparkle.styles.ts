@@ -86,6 +86,18 @@ export const Wave = styled.div`
   }
 `;
 
+export const Wave2 = styled.div`
+  width: 100%;
+  height: 600px;
+  background-image: url('/wave-2.svg');
+  background-size: cover;
+  position: absolute;
+  bottom: 0px;
+  @media (max-width: 800px) {
+    height: 100px;
+  }
+`;
+
 export const ImageBubble = styled.div`
   width: 800px;
   height: 800px;
