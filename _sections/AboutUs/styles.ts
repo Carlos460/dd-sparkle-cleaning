@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 // SectionContainer
 // Header
@@ -33,7 +33,7 @@ export const Image = styled.div`
   width: 50%;
   height: 100%;
 
-  background-image: url("/clean_glass.webp");
+  background-image: url('/images/clean_glass.webp');
   background-size: cover;
 `;
 
@@ -44,7 +44,7 @@ export const Content = styled.div`
 `;
 
 export const Text = styled.text`
-  font-family: "Varela Round";
+  font-family: 'Varela Round';
   font-style: normal;
   font-weight: 400;
   font-size: 20px;

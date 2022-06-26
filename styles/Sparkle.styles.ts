@@ -90,7 +90,7 @@ export const ImageBubble = styled.div`
   width: 800px;
   height: 800px;
   border-radius: 800px;
-  background-image: url('/photos/clean_glass.webp');
+  background-image: url('/images/clean_glass.webp');
   background-size: cover;
   background-position: 0px -300px;
   transform: scale(-1, 1);
