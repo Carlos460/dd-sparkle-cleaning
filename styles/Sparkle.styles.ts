@@ -94,7 +94,7 @@ export const Wave2 = styled.div`
   position: absolute;
   bottom: 0px;
   @media (max-width: 800px) {
-    height: 100px;
+    height: 200px;
   }
 `;
 
