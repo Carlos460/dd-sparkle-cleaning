@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 80%;
-  max-width: 1000px;
+  width: 85%;
+  max-width: 900px;
   margin: 150px auto auto;
   padding: 50px;
   border-radius: 10px;
@@ -11,6 +11,18 @@ export const Container = styled.div`
 
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   background-color: white;
+  @media (max-width: 1100px) {
+    flex-direction: column-reverse;
+  }
+  @media (max-width: 950px) {
+    width: 100%;
+    margin: 75px 0px 0px;
+    padding: 10px;
+  }
+  @media (max-width: 450px) {
+    padding: 0px;
+    margin: 50px 0px 25px;
+  }
 `;
 
 export const LeftContent = styled.div`
@@ -18,12 +30,22 @@ export const LeftContent = styled.div`
   padding: 0px 25px;
   display: flex;
   flex-direction: column;
+  @media (max-width: 1100px) {
+    width: 100%;
+  }
+  @media (max-width: 900px) {
+    padding: 0px 10px 15px;
+  }
 `;
 
 export const RightContent = styled.div`
   width: 50%;
   display: flex;
   flex-direction: column;
+  @media (max-width: 1100px) {
+    width: 100%;
+    flex-direction: row;
+  }
 `;
 
 export const Title = styled.h1`
@@ -46,6 +68,7 @@ export const Input = styled.input`
 
 export const InputBox = styled.textarea`
   height: 150px;
+  max-height: 250px;
   border-radius: 5px;
   border: 1.4px solid var(--primary);
   outline: none;
@@ -78,7 +101,9 @@ export const SubmitButton = styled.button`
 
 export const ProfileImageWrapper = styled.div`
   width: 100%;
-  display: flex;
+  @media (max-width: 1100px) {
+    width: fit-content;
+  }
 `;
 
 export const ProfileImage = styled.div`
@@ -88,12 +113,30 @@ export const ProfileImage = styled.div`
   background-image: url('/vector-profile.svg');
   background-position: center;
   background-repeat: no-repeat;
+  @media (max-width: 1100px) {
+    margin: 0px;
+    border-radius: 100px;
+  }
+  @media (max-width: 720px) {
+    width: 150px;
+    height: 150px;
+    transform: scale(0.75);
+  }
 `;
 
 export const SocialLinkWrapper = styled.div`
   margin: 35px auto 5px;
   display: flex;
   flex-direction: column;
+  @media (max-width: 1100px) {
+    margin: auto 35px;
+  }
+  @media (max-width: 900px) {
+    margin: auto 10px;
+  }
+  @media (max-width: 450px) {
+    margin: auto 0px;
+  }
 `;
 
 export const SocialLink = styled.div`
@@ -116,4 +159,7 @@ export const Icon = styled.div<IIconProps>`
 export const Text = styled.p`
   margin: 0px;
   font-size: 18px;
+  @media (max-width: 450px) {
+    font-size: 14px;
+  }
 `;

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 // SectionContainer
 // Header
@@ -12,6 +12,20 @@ export const SectionContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
+
+  /* antd xxl screens */
+  @media (min-width: 1600px) {
+  }
+  /* antd xl screens */
+  @media (max-width: 1200px) {
+  }
+  /* antd lg screens */
+  @media (max-width: 768px) {
+    flex-flow: column wrap;
+  }
+  /* antd xs screens */
+  @media (max-width: 480px) {
+  }
 `;
 
 export const Header = styled.div`
@@ -19,6 +33,7 @@ export const Header = styled.div`
   align-items: end;
   height: 20%;
 
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 70px;
   font-weight: 600;
 `;
@@ -32,8 +47,7 @@ export const Image = styled.div`
   width: 50%;
   height: 100%;
 
-  background-image: url('/images/clean_glass.webp');
-  background-size: cover;
+  background-image: url("/images/clean_glass.webp");
 `;
 
 export const Content = styled.div`
@@ -43,7 +57,7 @@ export const Content = styled.div`
 `;
 
 export const Text = styled.text`
-  font-family: 'Varela Round';
+  font-family: "Varela Round";
   font-style: normal;
   font-weight: 400;
   font-size: 20px;
@@ -71,6 +85,7 @@ export const Button = styled.button`
   border-radius: 4px;
   cursor: pointer;
   box-shadow: var(--primary);
+
   &:hover {
     background-color: var(--primary);
     color: white;
