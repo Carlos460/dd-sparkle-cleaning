@@ -6,15 +6,15 @@ const OurServices = () => {
   return (
     <S.SectionContainer>
       <S.Header>
-        <h1>Services for</h1>
-        <br />
-        <h1>Homes</h1>
+        <h1>
+          Services for <br /> Homes
+        </h1>
       </S.Header>
 
       <S.Text>
         <h4>
           We provide professional cleaning for you home. Giving you the time to
-          focus on on yourself
+          focus on on yourself.
         </h4>
         <br />
         <h4>
@@ -28,11 +28,30 @@ const OurServices = () => {
       </S.Text>
 
       <S.BoxContainer>
-        {/* <h1> Offices </h1>
-        <h1> Homes </h1>
-        <h1> Apartments </h1>
-        <h1> Move In/Out </h1>
-        <h1> Celebration After Parties </h1> */}
+        <S.Row>
+          <S.Box>
+            <h4>Offices</h4>
+          </S.Box>
+          <S.Box>
+            <h4>Homes </h4>
+          </S.Box>
+          <S.Box>
+            <h4>Apartments</h4>
+          </S.Box>
+        </S.Row>
+        <S.Row>
+          <S.Box>
+            <h4>
+              Move in <br /> Move Out
+            </h4>
+          </S.Box>
+          <S.Box>
+            <h4>Celebration</h4>
+          </S.Box>
+          <S.Box>
+            <h4>Housekeeping</h4>
+          </S.Box>
+        </S.Row>
       </S.BoxContainer>
 
       <S.Link>
