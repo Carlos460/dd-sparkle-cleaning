@@ -11,50 +11,92 @@ export const SectionContainer = styled.div`
   justify-content: center;
   flex-direction: column;
   height: 100%;
-  width: 100%;
-  margin-top: 10rem;
+  max-width: 75%;
+  margin: 10rem auto 5rem auto;
+  @media (max-width: 800px) {
+    max-width: 100%;
+  }
 `;
 
 export const Header = styled.div`
-  display: flex;
-  justify-content: start;
   width: 100%;
-  font-size: 25px;
-
-  display: flex;
-  flex-wrap: column;
-  background-color: blueviolet;
 `;
+
+export const Title = styled.div`
+  font-size: 70px;
+  line-height: 80px;
+  font-weight: 600;
+  font-family: sans-serif;
+  color: ${(props) => props.color || "black"};
+
+  @media (max-width: 450px) {
+    font-size: 40px;
+    line-height: 45px;
+  }
+`;
+
 export const Text = styled.div`
   margin: 30px 0px;
   font-size: 24px;
-  background-color: orange;
   font-family: sans-serif;
+
+  @media (max-width: 450px) {
+    font-size: 20px;
+  }
 `;
+
 export const BoxContainer = styled.div`
-  background-color: yellow;
-  height: 150px;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
 `;
 
 export const Row = styled.div`
-  display: flex;
-  justify-content: space-between;
   width: 100%;
   height: 50%;
+  margin: 10px 0px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+
+  justify-content: space-between;
+  row-gap: 50px;
+
+  @media (max-width: 1000px) {
+    grid-template-columns: auto auto;
+  }
+  @media (max-width: 450px) {
+    grid-template-columns: 1fr;
+  }
+
+  & > Link {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+  }
 `;
+
 export const Box = styled.div`
   background-color: var(--primary);
   color: white;
+  font-size: 17px;
+  line-height: 20px;
 
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
 
-  height: 90%;
-  width: 15%;
-  margin: 0 0 0 0;
-  border-radius: 15px;
+  border-radius: 5px;
+  height: 60px;
+  width: 150px;
+
+  @media (max-width: 1000px) {
+    width: 200px;
+  }
+  @media (max-width: 450px) {
+    width: 100%;
+  }
 `;
-export const Link = styled.link``;
+export const Link = styled.link`
+  display: flex;
+`;
