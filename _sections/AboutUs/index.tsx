@@ -1,15 +1,14 @@
-import Link from "next/link";
-import * as S from "./styles";
-import { Title } from "@styles/Sparkle.styles";
+import Link from 'next/link';
+import Image from 'next/image';
+import * as S from './styles';
 
 const About = () => {
   return (
     <S.SectionContainer>
       <S.Header>About Us</S.Header>
-      <S.InnerContainer>
-        <S.Image></S.Image>
-
-        <S.Content>
+      <S.ContentWrapper>
+        <S.LeftContent></S.LeftContent>
+        <S.RightContent>
           <S.Text>
             <p>My name is Dulce and I’m the owner of D.D. Sparkle Cleaning.</p>
             <p>
@@ -31,12 +30,20 @@ const About = () => {
               sollicitudin non dictum sit amet, commodo non diam.
             </p>
           </S.Text>
-          <S.ButtonContainer>
-            <S.Button>Services</S.Button>
-            <S.Button>Contact Us</S.Button>
-          </S.ButtonContainer>
-        </S.Content>
-      </S.InnerContainer>
+          <S.ButtonList>
+            <Link href={`/services`}>
+              <S.ButtonItem>
+                <S.Button>Services</S.Button>
+              </S.ButtonItem>
+            </Link>
+            <Link href={`/contact`}>
+              <S.ButtonItem>
+                <S.Button>Contact Us</S.Button>
+              </S.ButtonItem>
+            </Link>
+          </S.ButtonList>
+        </S.RightContent>
+      </S.ContentWrapper>
     </S.SectionContainer>
   );
 };

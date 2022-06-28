@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 // SectionContainer
 // Header
@@ -9,89 +9,113 @@ import styled from "styled-components";
 // Buttons
 
 export const SectionContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-
-  /* antd xxl screens */
-  @media (min-width: 1600px) {
-  }
-  /* antd xl screens */
-  @media (max-width: 1200px) {
-  }
-  /* antd lg screens */
-  @media (max-width: 768px) {
-    flex-flow: column wrap;
-  }
-  /* antd xs screens */
-  @media (max-width: 480px) {
-  }
+  margin: 50px 0px;
+  min-height: 100vh;
+  width: 100%;
 `;
 
-export const Header = styled.div`
-  display: flex;
-  align-items: end;
-  height: 20%;
-
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+export const Header = styled.h1`
+  font-family: sans-serif;
   font-size: 70px;
   font-weight: 600;
+  margin-bottom: 10px;
+  @media (max-width: 1300px) {
+    width: 600px;
+    margin: 0px auto;
+  }
+  @media (max-width: 900px) {
+    width: 100%;
+  }
 `;
 
-export const InnerContainer = styled.div`
-  height: 80%;
+export const ContentWrapper = styled.div`
+  height: 800px;
   display: flex;
+  flex-direction: row;
+  @media (max-width: 1300px) {
+    flex-direction: column;
+    height: fit-content;
+  }
 `;
 
-export const Image = styled.div`
+export const LeftContent = styled.div`
   width: 50%;
   height: 100%;
 
-  background-image: url("/images/clean_glass.webp");
+  background-image: url('/images/cleaning.jpg');
+  background-size: cover;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  @media (max-width: 1300px) {
+    width: 600px;
+    height: 400px;
+    margin: 0px auto;
+  }
+  @media (max-width: 900px) {
+    width: 100%;
+  }
 `;
 
-export const Content = styled.div`
+export const RightContent = styled.div`
   display: flex;
   flex-direction: column;
+  padding: 0px 0px 0px 20px;
   width: 50%;
+  @media (max-width: 1300px) {
+    width: 600px;
+    padding: 20px 0px;
+    margin: 0px auto;
+  }
+  @media (max-width: 900px) {
+    width: 100%;
+  }
 `;
 
-export const Text = styled.text`
-  font-family: "Varela Round";
-  font-style: normal;
-  font-weight: 400;
+export const Text = styled.p`
   font-size: 20px;
   line-height: 29px;
-  padding: 0px 15px;
 `;
 
-export const ButtonContainer = styled.div`
+export const ButtonList = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
   align-items: end;
-  justify-content: end;
+  justify-content: space-between;
+  @media (max-width: 1300px) {
+    flex-direction: column;
+  }
+`;
+
+export const ButtonItem = styled.a`
+  width: 45%;
+  @media (max-width: 1300px) {
+    width: 100%;
+  }
 `;
 
 export const Button = styled.button`
   height: 45px;
-  width: 130px;
-  margin: 20px 15px 0px;
+  width: 100%;
+  margin: 20px 0px 0px;
   font-size: 17px;
 
+  text-align: center;
   color: var(--primary);
   background-color: white;
   border: solid 2px var(--primary);
   border-radius: 4px;
   cursor: pointer;
-  box-shadow: var(--primary);
-
+  transition: background-color 0.4s, color 0.4s;
   &:hover {
     background-color: var(--primary);
     color: white;
   }
   &:active {
-    background-color: var(--primary);
-    color: white;
+    background-color: white;
+    color: var(--primary);
+  }
+  @media (max-width: 1300px) {
+    width: 100%;
+    margin: 10px 0px 0px;
   }
 `;
