@@ -46,6 +46,11 @@ export const RightContent = styled.div`
     width: 100%;
     flex-direction: row;
   }
+  @media (max-width: 370px) {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 export const Title = styled.h1`
@@ -55,7 +60,7 @@ export const Title = styled.h1`
 `;
 
 export const Input = styled.input`
-  height: 30px;
+  height: 35px;
   border-radius: 5px;
   border: 1.4px solid var(--primary);
   outline: none;
@@ -80,7 +85,7 @@ export const InputBox = styled.textarea`
 `;
 
 export const SubmitButton = styled.button`
-  height: 30px;
+  height: 35px;
   color: white;
   background-color: var(--primary);
   border-radius: 5px;
