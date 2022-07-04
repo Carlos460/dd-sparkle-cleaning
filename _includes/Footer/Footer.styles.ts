@@ -37,6 +37,14 @@ export const SectionContainer = styled.div`
   }
 `;
 
+export const FooterContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  @media(max-width: 450px){
+    }
+`;
+
 export const Left = styled.div`
   display: flex;
   flex-direction: column;
@@ -44,25 +52,16 @@ export const Left = styled.div`
   text-decoration: none;
   width: 50%;
 
-`;
-
-export const FooterContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  @media(max-width: 450px){
-      justify-content: center;
-    }
-`;
-
-export const FooterLink = styled.div`
-  & > a {
+  & > ul > li > a {
     font-family: sans-serif;
     text-decoration: none;
     color: white; 
   }
+  
+  & > ul {
+    list-style: none;
+  }
 `;
-
 
 export const Right = styled.div`
   display: flex;
@@ -71,11 +70,6 @@ export const Right = styled.div`
   width: 50%;
   
   align-items: end;
-
-  @media(max-width: 450px){
-      justify-content: center;
-      width: 100%;
-    }
 `;
 
 export const Title = styled.div`

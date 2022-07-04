@@ -4,7 +4,9 @@ import styled from "styled-components";
 //Header
 //Text
 //BoxContainer
-//Link
+//LinkContainer
+//Box
+//Row
 
 export const SectionContainer = styled.div`
   display: flex;
@@ -98,19 +100,18 @@ export const Box = styled.div`
   }
 `;
 
-export const LinkContainer = styled.div`
+export const LinkContainer = styled.ul`
   display: flex;
   width: 100%;
   justify-content: end;
   margin-top: 30px;
   color: white;
-  font-size: 20px;
-
   text-decoration: none;
-
-  & > a {
-    text-decoration: none;
+  font-size: 20px;
+  
+  & > li > a {
     color: var(--primary);
+    text-decoration: none;
 
     @media(max-width: 450px){
       font-size: 25px;

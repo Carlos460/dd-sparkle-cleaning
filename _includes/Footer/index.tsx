@@ -6,26 +6,39 @@ const Footer = () => {
   return (
     <S.SectionContainer>
       <S.Left>
-        <S.Title>D.D.Sparkle Cleaning</S.Title>
-            <S.FooterContainer>
-                <S.FooterLink>
-                  <a href="/about"> About </a>
-                </S.FooterLink>
-                
-                <S.FooterLink>
-                  <a href="/contact"> Contact </a>
-                </S.FooterLink>
+        <ul>
+          <li>
+            <Link href={"/"}>
+              <a> 
+                <S.Title>D.D. Sparkle Cleaning </S.Title>  
+              </a>
+            </Link>
+          </li>
 
-                <S.FooterLink>
-                  <a href="/services"> Services </a>
-                </S.FooterLink>
+          <li>
+            <Link href={"/about"}>
+              <a> About </a>
+            </Link>
+          </li>
 
-            </S.FooterContainer>
+          <li>
+            <Link href={"/services"}>
+              <a> Services </a>
+            </Link>
+          </li>
+
+          <li>
+            <Link href={"/contact"}>
+              <a> Contact </a>
+            </Link>
+          </li>
+        </ul>
+           
       </S.Left>
       
       <S.Right>
         <S.Title>Dulce Contact Info</S.Title>
-        <div>(347) 337-9903</div>
+        <div>(347)-337-9903</div>
         <div>dlcdulce7@gmail.com</div>
         <div>New York City, New York</div>
       </S.Right>

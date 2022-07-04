@@ -12,7 +12,7 @@ const OurServices = () => {
 
       <S.Text>
         <div>
-          We provide professional cleaning for you home. Giving you ample time to
+          We provide professional cleaning for your home, giving you ample time to
           focus on on yourself.
         </div>
         <br />
@@ -27,7 +27,7 @@ const OurServices = () => {
         <br />
         <div>
           Re-occuring appointments to make sure you always have a piece of mind?
-          We can get you booked in with us! <br />
+          We can get you booked in with us! 
         </div>
       </S.Text>
 
@@ -53,8 +53,11 @@ const OurServices = () => {
         </S.Row>
 
         <S.LinkContainer>
-          <a href={"/contact"}>Request an estimate</a>  
-          <div style={{ backgroundImage: "publicIconsArrow.svg" }}></div>
+          <li>
+            <Link href={"/contact"}>
+                <a>Request an Estimate</a>
+            </Link>  
+          </li>          
         </S.LinkContainer>
       </S.BoxContainer>
     </S.SectionContainer>
