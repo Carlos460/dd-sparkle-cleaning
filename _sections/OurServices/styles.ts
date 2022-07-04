@@ -16,6 +16,10 @@ export const SectionContainer = styled.div`
   @media (max-width: 800px) {
     max-width: 100%;
   }
+
+  @media(max-width: 450px){
+
+  }
 `;
 
 export const Header = styled.div`
@@ -67,12 +71,6 @@ export const Row = styled.div`
   @media (max-width: 450px) {
     grid-template-columns: 1fr;
   }
-
-  & > Link {
-    width: 100%;
-    display: flex;
-    justify-content: end;
-  }
 `;
 
 export const Box = styled.div`
@@ -90,6 +88,8 @@ export const Box = styled.div`
   height: 60px;
   width: 150px;
 
+  box-shadow: 5px 5px 10px rgba(0 , 0, 0, 0.5);
+
   @media (max-width: 1000px) {
     width: 200px;
   }
@@ -97,6 +97,30 @@ export const Box = styled.div`
     width: 100%;
   }
 `;
-export const Link = styled.link`
+
+export const LinkContainer = styled.div`
   display: flex;
+  width: 100%;
+  justify-content: end;
+  margin-top: 30px;
+  color: white;
+  font-size: 20px;
+
+  text-decoration: none;
+
+  & > a {
+    text-decoration: none;
+    color: var(--primary);
+
+    @media(max-width: 450px){
+      font-size: 25px;
+    }
+  }
+
+  @media (max-width: 450px) {
+    justify-content: center;
+    margin-top: 40px;
+  }
 `;
+
+
