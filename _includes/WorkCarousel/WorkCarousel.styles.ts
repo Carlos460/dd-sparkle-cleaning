@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Conatiner = styled.div`
   position: relative;
   width: 680px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
   @media (max-width: 1000px) {
     width: 100%;
@@ -23,6 +24,7 @@ export const WhiteBlock = styled.div`
   width: 400px;
   height: 600px;
   background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 
   position: absolute;
   top: -50px;
