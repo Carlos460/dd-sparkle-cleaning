@@ -12,9 +12,9 @@ import * as Sparkle from '@styles/Sparkle.styles';
 const Contact: NextPage = () => {
   return (
     <>
-      <Navbar theme="pink" />
       <Sparkle.Section>
         <Sparkle.Wave2 style={{ top: 0 }} />
+        <Navbar theme="pink" />
         <Row justify="center">
           <Col xs={22} sm={18} lg={20} xxl={14}>
             <ContactUs />
