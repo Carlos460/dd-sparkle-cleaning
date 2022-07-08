@@ -1,4 +1,7 @@
+import { debug } from 'console';
 import styled from 'styled-components';
+import { rootCertificates } from 'tls';
+import { isNativeError } from 'util/types';
 
 interface IContainerProps {
   bgColor?: string;
@@ -11,7 +14,7 @@ export const Wrapper = styled.div<IContainerProps>`
   position: relative;
 `;
 
-export const Hamburger = styled.div`
+export const HamburgerWrapper = styled.div`
   height: 70px;
   width: 70px;
 
@@ -21,16 +24,60 @@ export const Hamburger = styled.div`
   }
 `;
 
-interface IHamNavList {
+interface IHamburgerProps {
+  bgColor: string;
+}
+
+export const Hamburger = styled.div<IHamburgerProps>`
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  &:hover {
+    & > div {
+      background-color: ${(props) => props.bgColor};
+    }
+  }
+`;
+
+interface ILineProps {
+  bgColor: string;
+}
+
+export const Line = styled.div<ILineProps>`
+  margin: 2px 0px;
+  width: 35px;
+  height: 4px;
+  background-color: ${(props) => props.bgColor};
+  transition: background-color 0.3s;
+`;
+
+interface IHamListWrapperProps {
+  opacity: string;
+  pointerEvents: string;
+}
+
+export const HamListWrapper = styled.div<IHamListWrapperProps>`
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 8;
+
+  opacity: ${(props) => props.opacity};
+  pointer-events: ${(props) => props.pointerEvents};
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: opacity 0.4s;
+`;
+
+interface IHamList {
   rightPos: string;
 }
 
-export const HamNavList = styled.div<IHamNavList>`
-  width: 100px;
+export const HamList = styled.ul<IHamList>`
+  width: 250px;
   height: 100vh;
   background-color: white;
   list-style: none;
-  padding: 0px 5px;
 
   display: flex;
   flex-direction: column;
@@ -41,23 +88,18 @@ export const HamNavList = styled.div<IHamNavList>`
   transition: right 0.4s ease-in-out;
 `;
 
-export const LineWrap = styled.div`
-  margin: auto;
-  display: flex;
-  flex-direction: column;
+export const HamItem = styled.li`
+  width: 100%;
+  padding-left: 10px;
+
+  color: black;
+  font-size: 25px;
+  margin: 10px 0px;
+  transition: color 0.3s;
   cursor: pointer;
-`;
-
-interface ILineProps {
-  rotateDeg: string;
-}
-
-export const Line = styled.div<ILineProps>`
-  margin: 2px 0px;
-  width: 35px;
-  height: 4px;
-  border-radius: 5px;
-  background-color: black;
+  &:hover {
+    color: var(--primary);
+  }
 `;
 
 export const Container = styled.div<IContainerProps>`

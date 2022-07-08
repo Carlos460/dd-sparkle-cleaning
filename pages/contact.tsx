@@ -13,7 +13,7 @@ const Contact: NextPage = () => {
   return (
     <>
       <Sparkle.Section>
-        <Sparkle.Wave2 style={{ top: 0 }} />
+        <Sparkle.Wave2 style={{ top: 70 }} />
         <Navbar theme="pink" />
         <Row justify="center">
           <Col xs={22} sm={18} lg={20} xxl={14}>

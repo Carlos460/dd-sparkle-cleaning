@@ -3,7 +3,6 @@ import * as S from './styles';
 
 import { Row, Col } from 'antd';
 import { useEffect, useState } from 'react';
-import { isatty } from 'tty';
 
 const colorThemes = {
   default: {
@@ -23,31 +22,47 @@ const Navbar = (props: { theme?: string }) => {
 
   const [isActive, setIsActive] = useState(false);
   const [position, setPosition] = useState('-300px');
-  const showHamNavList = () => {};
+  const [opacity, setOpacity] = useState('0');
+  const [pointerEvents, setPointerEvents] = useState('none');
 
   useEffect(() => {
     isActive ? setPosition('0px') : setPosition('-300px');
+    isActive ? setOpacity('1') : setOpacity('0');
+    isActive ? setPointerEvents('auto') : setPointerEvents('none');
   }, [isActive]);
 
   return (
     <S.Wrapper bgColor={theme.bgColor}>
-      <S.HamNavList rightPos={position}>
-        <S.NavLink>
+      <S.HamListWrapper
+        opacity={opacity}
+        pointerEvents={pointerEvents}
+        onClick={() => {
+          setIsActive(!isActive);
+        }}
+      >
+        <S.HamList rightPos={position}>
+          <Link href="/">
+            <a>
+              <S.HamItem>Home</S.HamItem>
+            </a>
+          </Link>
           <Link href="/about">
-            <a>About</a>
+            <a>
+              <S.HamItem>About</S.HamItem>
+            </a>
           </Link>
-        </S.NavLink>
-        <S.NavLink>
           <Link href="/services">
-            <a>Services</a>
+            <a>
+              <S.HamItem>Services</S.HamItem>
+            </a>
           </Link>
-        </S.NavLink>
-        <S.NavLink>
           <Link href="/contact">
-            <a>Contact</a>
+            <a>
+              <S.HamItem>Contact</S.HamItem>
+            </a>
           </Link>
-        </S.NavLink>
-      </S.HamNavList>
+        </S.HamList>
+      </S.HamListWrapper>
       <Row justify="center">
         <Col xs={22} sm={18} lg={20} xxl={14}>
           <S.Container
@@ -76,17 +91,18 @@ const Navbar = (props: { theme?: string }) => {
                 </Link>
               </S.NavLink>
             </S.NavList>
-            <S.Hamburger>
-              <S.LineWrap
+            <S.HamburgerWrapper>
+              <S.Hamburger
+                bgColor={theme.hoverTextColor}
                 onClick={() => {
                   setIsActive(!isActive);
                 }}
               >
-                <S.Line rotateDeg="-45deg" />
-                <S.Line rotateDeg="0deg" />
-                <S.Line rotateDeg="45deg" />
-              </S.LineWrap>
-            </S.Hamburger>
+                <S.Line bgColor={theme.textColor} />
+                <S.Line bgColor={theme.textColor} />
+                <S.Line bgColor={theme.textColor} />
+              </S.Hamburger>
+            </S.HamburgerWrapper>
           </S.Container>
         </Col>
       </Row>

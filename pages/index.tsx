@@ -1,8 +1,8 @@
-import type {NextPage} from 'next';
+import type { NextPage } from 'next';
 import Head from 'next/head';
 import Navbar from '@includes/Navbar';
 
-import {Row, Col} from 'antd';
+import { Row, Col } from 'antd';
 
 // Sections
 import WorkShowcase from '@sections/WorkShowcase';
@@ -33,7 +33,7 @@ const Home: NextPage = () => {
           <S.Wave />
         </S.Section>
         <S.Section backgroundColor={`var(--primary)`}>
-          <Row align='middle' justify="center" style={{height: '100%'}}>
+          <Row align="middle" justify="center" style={{ height: '100%' }}>
             <Col xs={22} sm={18} lg={20} xxl={14}>
               <WorkShowcase />
             </Col>
@@ -41,7 +41,7 @@ const Home: NextPage = () => {
         </S.Section>
         <S.Section>
           <Testimonials />
-          <S.Wave style={{top: '0px', transform: 'scaleY(-1)'}} />
+          <S.Wave style={{ top: '0px', transform: 'scaleY(-1)' }} />
           <S.Wave />
         </S.Section>
         <Footer />
