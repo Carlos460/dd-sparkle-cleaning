@@ -1,81 +1,101 @@
-import Link from "next/link";
 import styled from "styled-components";
 
-
-//SectionContainer
+//Wrapper
+//FooterLink
+//Section Container
+//Footer Container
 //Left
 //Right
 //Title
 
-//FooterLink
+export const Wrapper = styled.div`
+  width: 100%;
+  background-color: var(--primary);
+`;
 
 export const SectionContainer = styled.div`
   width: 100%;
-  height: 250px;
+  display: flex;
+  padding: 32px 0px;
 
-  background-color: var(--primary);
   color: white;
   font-family: sans-serif;
   font-size: 20px;
-  
-  display: flex;
-  padding: 2rem 10rem;
 
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  
   & > a {
     text-decoration: none;
   }
-  @media (max-width: 1000px) {
-    
-
-  }
   @media (max-width: 450px) {
-    
+    flex-direction: column;
   }
 `;
 
 export const FooterContainer = styled.div`
   display: flex;
-  flex-direction: column;
-
-  @media(max-width: 450px){
-    }
 `;
 
 export const Left = styled.div`
   display: flex;
-  flex-direction: column;
-
-  text-decoration: none;
   width: 50%;
+  flex-direction: column;
+  text-decoration: none;
 
   & > ul > li > a {
     font-family: sans-serif;
     text-decoration: none;
-    color: white; 
+    color: white;
   }
-  
+
+  & > ul > li > a:hover {
+    opacity: 0.75;
+    text-decoration: underline;
+  }
+
   & > ul {
     list-style: none;
+  }
+
+  @media (max-width: 450px) {
+    align-items: center;
+    width: 100%;
+    & > ul > li {
+      display: flex;
+      justify-content: center;
+      font-size: 15px;
+    }
   }
 `;
 
 export const Right = styled.div`
   display: flex;
   flex-direction: column;
-
   width: 50%;
-  
   align-items: end;
+
+  @media (max-width: 450px) {
+    width: 100%;
+  }
+`;
+
+export const FooterText = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  @media (max-width: 450px) {
+    justify-content: center;
+    font-size: 15px;
+  }
 `;
 
 export const Title = styled.div`
-font-family: sans-serif;
-font-size: 25px;
-font-weight: bold;
+  font-family: sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+
+  @media (max-width: 450px) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+  }
 `;
-
-
