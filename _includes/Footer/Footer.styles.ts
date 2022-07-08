@@ -25,7 +25,7 @@ export const SectionContainer = styled.div`
   & > a {
     text-decoration: none;
   }
-  @media (max-width: 450px) {
+  @media (max-width: 700px) {
     flex-direction: column;
   }
 `;
@@ -55,7 +55,7 @@ export const Left = styled.div`
     list-style: none;
   }
 
-  @media (max-width: 450px) {
+  @media (max-width: 700px) {
     align-items: center;
     width: 100%;
     & > ul > li {
@@ -72,7 +72,7 @@ export const Right = styled.div`
   width: 50%;
   align-items: end;
 
-  @media (max-width: 450px) {
+  @media (max-width: 700px) {
     width: 100%;
   }
 `;
@@ -81,7 +81,7 @@ export const FooterText = styled.div`
   width: 100%;
   display: flex;
   justify-content: end;
-  @media (max-width: 450px) {
+  @media (max-width: 700px) {
     justify-content: center;
     font-size: 15px;
   }
@@ -92,7 +92,7 @@ export const Title = styled.div`
   font-size: 25px;
   font-weight: bold;
 
-  @media (max-width: 450px) {
+  @media (max-width: 700px) {
     width: 100%;
     display: flex;
     justify-content: center;
