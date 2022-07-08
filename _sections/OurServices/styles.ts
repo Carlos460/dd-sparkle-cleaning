@@ -19,8 +19,7 @@ export const SectionContainer = styled.div`
     max-width: 100%;
   }
 
-  @media(max-width: 450px){
-
+  @media (max-width: 450px) {
   }
 `;
 
@@ -80,8 +79,8 @@ export const Box = styled.div`
   color: white;
   font-size: 17px;
   line-height: 20px;
-
   display: flex;
+
   justify-content: center;
   flex-direction: column;
   align-items: center;
@@ -90,7 +89,7 @@ export const Box = styled.div`
   height: 60px;
   width: 150px;
 
-  box-shadow: 5px 5px 10px rgba(0 , 0, 0, 0.5);
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
 
   @media (max-width: 1000px) {
     width: 200px;
@@ -100,7 +99,7 @@ export const Box = styled.div`
   }
 `;
 
-export const LinkContainer = styled.ul`
+export const LinkContainer = styled.div`
   display: flex;
   width: 100%;
   justify-content: end;
@@ -108,15 +107,6 @@ export const LinkContainer = styled.ul`
   color: white;
   text-decoration: none;
   font-size: 20px;
-  
-  & > li > a {
-    color: var(--primary);
-    text-decoration: none;
-
-    @media(max-width: 450px){
-      font-size: 25px;
-    }
-  }
 
   @media (max-width: 450px) {
     justify-content: center;
@@ -124,4 +114,37 @@ export const LinkContainer = styled.ul`
   }
 `;
 
+export const RequestLink = styled.div`
+  color: var(--primary);
+  text-decoration: none;
+  line-height: 25px;
 
+  display: flex;
+  align-items: center;
+
+  & > p {
+    margin: 0px;
+    transition: text-decoration 0.2s;
+  }
+
+  & > p:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 450px) {
+    font-size: 15px;
+  }
+`;
+
+export const Arrow = styled.div`
+  background-image: url("/icons/Arrow.svg");
+  background-size: cover;
+  height: 20px;
+  width: 25px;
+  margin-left: 5px;
+
+  @media (max-width: 450px) {
+    width: 20px;
+    height: 15px;
+  }
+`;

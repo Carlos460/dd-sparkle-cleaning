@@ -1,24 +1,23 @@
 import Link from "next/link";
 import * as S from "./styles";
-import { Title } from "@styles/Sparkle.styles";
 
 const OurServices = () => {
   return (
     <S.SectionContainer>
       <S.Header>
-        <S.Title>Services for</S.Title>
-        <S.Title color="var(--primary)">Homes</S.Title>
+        <S.Title>Services we</S.Title>
+        <S.Title color="var(--primary)">Provide</S.Title>
       </S.Header>
 
       <S.Text>
         <div>
-          We provide professional cleaning for your home, giving you ample time to
-          focus on on yourself.
+          We provide professional cleaning for your home, giving you ample time
+          to focus on on yourself.
         </div>
         <br />
         <div>
-          Are you moving in or out of your home? No problem, we've got you covered! Make
-          an appointment to set yourself up for success.
+          Are you moving in or out of your home? No problem, we've got you
+          covered! Make an appointment to set yourself up for success.
         </div>
         <br />
         <div>
@@ -27,7 +26,7 @@ const OurServices = () => {
         <br />
         <div>
           Re-occuring appointments to make sure you always have a piece of mind?
-          We can get you booked in with us! 
+          We can get you booked in with us!
         </div>
       </S.Text>
 
@@ -53,11 +52,13 @@ const OurServices = () => {
         </S.Row>
 
         <S.LinkContainer>
-          <li>
-            <Link href={"/contact"}>
-                <a>Request an Estimate</a>
-            </Link>  
-          </li>          
+          <Link href={"/contact"}>
+            <a>
+              <S.RequestLink>
+                <p>Request an Estimate</p> <S.Arrow />
+              </S.RequestLink>
+            </a>
+          </Link>
         </S.LinkContainer>
       </S.BoxContainer>
     </S.SectionContainer>
