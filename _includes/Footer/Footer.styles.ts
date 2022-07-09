@@ -25,7 +25,7 @@ export const SectionContainer = styled.div`
   & > a {
     text-decoration: none;
   }
-  @media (max-width: 700px) {
+  @media (max-width: 650px) {
     flex-direction: column;
   }
 `;
@@ -44,6 +44,9 @@ export const Left = styled.div`
     font-family: sans-serif;
     text-decoration: none;
     color: white;
+    @media (max-width: 800px) {
+      font-size: 18px;
+    }
   }
 
   & > ul > li > a:hover {
@@ -74,6 +77,7 @@ export const Right = styled.div`
 
   @media (max-width: 700px) {
     width: 100%;
+    font-size: 15px;
   }
 `;
 
@@ -84,6 +88,9 @@ export const FooterText = styled.div`
   @media (max-width: 700px) {
     justify-content: center;
     font-size: 15px;
+  }
+  @media (max-width: 800px) {
+    font-size: 18px;
   }
 `;
 
@@ -96,6 +103,10 @@ export const Title = styled.div`
     width: 100%;
     display: flex;
     justify-content: center;
+    font-size: 20px;
+  }
+
+  @media (max-width: 800px) {
     font-size: 20px;
   }
 `;

@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 // SectionContainer
 // Header
@@ -42,7 +42,7 @@ export const LeftContent = styled.div`
   width: 50%;
   height: 100%;
 
-  background-image: url('/images/cleaning.jpg');
+  background-image: url("/images/cleaning.jpg");
   background-size: cover;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   @media (max-width: 1300px) {
