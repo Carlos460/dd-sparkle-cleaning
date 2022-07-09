@@ -1,14 +1,14 @@
-import Link from 'next/link';
+import Link from "next/link";
 
-import * as S from './styles';
+import * as S from "./styles";
 
 const About = () => {
   return (
     <S.SectionContainer>
       <S.Header>About Us</S.Header>
       <S.ContentWrapper>
-        <S.LeftContent></S.LeftContent>
-        <S.RightContent>
+        <S.Image />
+        <S.ContentContainer>
           <S.Text>
             <p>My name is Dulce and I’m the owner of D.D. Sparkle Cleaning.</p>
             <p>
@@ -42,7 +42,7 @@ const About = () => {
               </S.ButtonItem>
             </Link>
           </S.ButtonList>
-        </S.RightContent>
+        </S.ContentContainer>
       </S.ContentWrapper>
     </S.SectionContainer>
   );

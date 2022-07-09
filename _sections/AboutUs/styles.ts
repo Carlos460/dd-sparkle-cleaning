@@ -19,51 +19,42 @@ export const Header = styled.h1`
   font-size: 70px;
   font-weight: 600;
   margin-bottom: 10px;
-  @media (max-width: 1300px) {
-    width: 600px;
-    margin: 0px auto;
-  }
+  width: 600px;
+  margin: 0px auto;
+  display: flex;
+  justify-content: center;
+
   @media (max-width: 900px) {
     width: 100%;
   }
 `;
 
 export const ContentWrapper = styled.div`
-  height: 800px;
+  height: fit-content;
   display: flex;
-  flex-direction: row;
-  @media (max-width: 1300px) {
-    flex-direction: column;
-    height: fit-content;
-  }
+  flex-direction: column;
 `;
 
-export const LeftContent = styled.div`
-  width: 50%;
-  height: 100%;
+export const Image = styled.div`
+  width: 600px;
+  height: 400px;
+  margin: 0px auto;
 
   background-image: url("/images/cleaning.jpg");
   background-size: cover;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-  @media (max-width: 1300px) {
-    width: 600px;
-    height: 400px;
-    margin: 0px auto;
-  }
   @media (max-width: 900px) {
     width: 100%;
   }
 `;
 
-export const RightContent = styled.div`
+export const ContentContainer = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 0px 0px 0px 20px;
-  width: 50%;
+  width: 600px;
+  padding: 20px 0px;
+  margin: 0px auto;
   @media (max-width: 1300px) {
-    width: 600px;
-    padding: 20px 0px;
-    margin: 0px auto;
   }
   @media (max-width: 900px) {
     width: 100%;
