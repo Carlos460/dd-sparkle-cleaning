@@ -39,7 +39,7 @@ export const ProfileImage = styled.div`
   border-radius: 150px;
   margin: 0px auto 20px;
 
-  background-image: url('/static/images/profile.webp');
+  background-image: url('/static/images/client-profile.webp');
   background-size: cover;
 `;
 
