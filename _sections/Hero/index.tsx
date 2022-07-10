@@ -5,7 +5,7 @@ import * as S from './styles';
 
 const Hero = () => {
   return (
-    <>
+    <S.Wrapper>
       <Sparkle.Title>
         Reliable <span style={{ color: '#FF91AF' }}>Cleaning</span> Service
       </Sparkle.Title>
@@ -18,7 +18,7 @@ const Hero = () => {
           <S.CtaButton>Schedule Appointment</S.CtaButton>
         </a>
       </Link>
-    </>
+    </S.Wrapper>
   );
 };
 

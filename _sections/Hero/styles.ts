@@ -1,4 +1,9 @@
+import { WrappedBuildError } from 'next/dist/server/base-server';
 import styled from 'styled-components';
+
+export const Wrapper = styled.div`
+  min-height: 800px;
+`;
 
 export const CtaButton = styled.button`
   height: 45px;
