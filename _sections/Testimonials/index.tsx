@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import * as S from './styles';
 
 const Testimonials = () => {
@@ -12,8 +13,16 @@ const Testimonials = () => {
           eiusmod tempor incididunt ut labore et dolore magna aliqua!"`}
           </S.TestimonialText>
           <S.ButtonWrapper>
-            <S.Button>Learn More</S.Button>
-            <S.Button>Submit Review</S.Button>
+            <Link href={`/about`}>
+              <a>
+                <S.Button>Learn More</S.Button>
+              </a>
+            </Link>
+            <Link href={`/contact`}>
+              <a>
+                <S.Button>Submit Review</S.Button>
+              </a>
+            </Link>
           </S.ButtonWrapper>
         </S.TestimonialWrapper>
       </S.Container>
