@@ -1,5 +1,5 @@
-import Link from "next/link";
-import * as S from "./styles";
+import Link from 'next/link';
+import * as S from './styles';
 
 const OurServices = () => {
   return (
@@ -16,8 +16,8 @@ const OurServices = () => {
         </div>
         <br />
         <div>
-          Are you moving in or out of your home? No problem, we've got you
-          covered! Make an appointment to set yourself up for success.
+          {`Are you moving in or out of your home? No problem, we've got you
+          covered! Make an appointment to set yourself up for success.`}
         </div>
         <br />
         <div>
@@ -52,7 +52,7 @@ const OurServices = () => {
         </S.Row>
 
         <S.LinkContainer>
-          <Link href={"/contact"}>
+          <Link href={'/contact'}>
             <a>
               <S.RequestLink>
                 <p>Request an Estimate</p> <S.Arrow />

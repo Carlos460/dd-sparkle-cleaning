@@ -9,7 +9,6 @@ export const Section = styled.div<ISectionProps>`
   width: 100%;
 
   position: relative;
-  overflow: hidden;
   background-color: ${(props) => props.backgroundColor || 'transparent'};
 `;
 
@@ -80,7 +79,7 @@ export const Wave = styled.div`
   background-image: url('/static/vectors/wave-1.svg');
   background-size: cover;
   position: absolute;
-  bottom: 0px;
+  bottom: -10px;
   @media (max-width: 800px) {
     height: 100px;
   }
