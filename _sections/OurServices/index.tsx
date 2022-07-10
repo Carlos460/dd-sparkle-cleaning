@@ -1,43 +1,66 @@
 import Link from "next/link";
 import * as S from "./styles";
-import { Title } from "@styles/Sparkle.styles";
 
 const OurServices = () => {
   return (
     <S.SectionContainer>
       <S.Header>
-        <h1>Services for</h1>
-        <br />
-        <h1>Homes</h1>
+        <S.Title>Services we</S.Title>
+        <S.Title color="var(--primary)">Provide</S.Title>
       </S.Header>
 
       <S.Text>
-        <h4>
-          We provide professional cleaning for you home. Giving you the time to
-          focus on on yourself
-        </h4>
+        <div>
+          We provide professional cleaning for your home, giving you ample time
+          to focus on on yourself.
+        </div>
         <br />
-        <h4>
-          Moving in or out your home? No problem, we got you covered! Make an
-          appointment to set yourself up for suceess.
-        </h4>
+        <div>
+          Are you moving in or out of your home? No problem, we've got you
+          covered! Make an appointment to set yourself up for success.
+        </div>
         <br />
-        Need help cleaning an after party, we’ll get it done in no time. <br />
-        Want reoccuring appointments to make sure you always have a piece of
-        mind? We can get you book in with us! <br />
+        <div>
+          Need help cleaning after a party? We’ll get it done in no time.
+        </div>
+        <br />
+        <div>
+          Re-occuring appointments to make sure you always have a piece of mind?
+          We can get you booked in with us!
+        </div>
       </S.Text>
 
       <S.BoxContainer>
-        {/* <h1> Offices </h1>
-        <h1> Homes </h1>
-        <h1> Apartments </h1>
-        <h1> Move In/Out </h1>
-        <h1> Celebration After Parties </h1> */}
-      </S.BoxContainer>
+        <S.Row>
+          <S.Box>Offices</S.Box>
 
-      <S.Link>
-        {/* <a href="/contact"> Request an estimate &rarr </a> */}
-      </S.Link>
+          <S.Box>Homes</S.Box>
+
+          <S.Box>Apartments</S.Box>
+
+          <S.Box>
+            <div>Moving In</div>
+            <div>Moving Out</div>
+          </S.Box>
+
+          <S.Box>
+            <div>Celebration</div>
+            <div>After Parties</div>
+          </S.Box>
+
+          <S.Box>Housekeeping</S.Box>
+        </S.Row>
+
+        <S.LinkContainer>
+          <Link href={"/contact"}>
+            <a>
+              <S.RequestLink>
+                <p>Request an Estimate</p> <S.Arrow />
+              </S.RequestLink>
+            </a>
+          </Link>
+        </S.LinkContainer>
+      </S.BoxContainer>
     </S.SectionContainer>
   );
 };

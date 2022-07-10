@@ -1,4 +1,5 @@
 import WorkCarousel from '@includes/WorkCarousel';
+import Link from 'next/link';
 import * as S from './styles';
 
 const WorkShowcase = () => {
@@ -13,7 +14,11 @@ const WorkShowcase = () => {
           <S.Text>
             We clean apartments, family homes, offices, and much more!
           </S.Text>
-          <S.OutlinedButton>Our Services</S.OutlinedButton>
+          <Link href={`/services`}>
+            <a>
+              <S.OutlinedButton>Our Services</S.OutlinedButton>
+            </a>
+          </Link>
         </S.RightContent>
       </S.ContentWrapper>
     </S.Container>

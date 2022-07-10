@@ -3,8 +3,11 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   width: 100%;
   height: 100vh;
+  min-height: 1000px;
   display: flex;
-  margin: 25px 0px;
+  @media (max-width: 800px) {
+    min-height: 800px;
+  }
 `;
 
 export const Container = styled.div`
