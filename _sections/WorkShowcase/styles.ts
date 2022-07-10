@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  height: 100vh;
+export const Wrapper = styled.div`
   width: 100%;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,7 +11,7 @@ export const Container = styled.div`
   }
 `;
 
-export const ContentWrapper = styled.div`
+export const Container = styled.div`
   margin: 50px auto;
   display: flex;
   @media (max-width: 1000px) {
@@ -48,6 +48,11 @@ export const Title = styled.h1`
   @media (max-width: 800px) {
     font-size: 70px;
     text-align: center;
+  }
+  @media (max-width: 350px) {
+    font-size: 50px;
+    line-height: 50px;
+    margin: 0px auto 10px;
   }
 `;
 

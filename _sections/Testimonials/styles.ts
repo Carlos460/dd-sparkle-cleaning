@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   width: 100%;
   height: 100vh;
-  min-height: 1000px;
   display: flex;
   @media (max-width: 800px) {
     min-height: 800px;
@@ -26,6 +25,11 @@ export const Title = styled.h1`
   @media (max-width: 800px) {
     font-size: 60px;
   }
+  @media (max-width: 350px) {
+    font-size: 40px;
+    line-height: 50px;
+    margin: 0px auto 10px;
+  }
 `;
 
 export const TestimonialWrapper = styled.div`
@@ -39,7 +43,7 @@ export const ProfileImage = styled.div`
   border-radius: 150px;
   margin: 0px auto 20px;
 
-  background-image: url('/images/profile.webp');
+  background-image: url('/static/images/client-profile.webp');
   background-size: cover;
 `;
 
@@ -56,6 +60,13 @@ export const TestimonialText = styled.p`
 
 export const ButtonWrapper = styled.div`
   margin: 25px auto;
+  @media (max-width: 350px) {
+    width: 100%;
+    margin: 20px 0px 0px;
+    padding: 0px 10px;
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 export const Button = styled.button`
@@ -77,5 +88,9 @@ export const Button = styled.button`
   &:active {
     background-color: transparent;
     color: var(--primary);
+  }
+  @media (max-width: 350px) {
+    width: 100%;
+    margin: 0px 0px 10px;
   }
 `;

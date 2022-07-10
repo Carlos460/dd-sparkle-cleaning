@@ -27,6 +27,11 @@ export const Header = styled.h1`
   @media (max-width: 900px) {
     width: 100%;
   }
+  @media (max-width: 350px) {
+    font-size: 50px;
+    line-height: 50px;
+    margin: 0px auto 10px;
+  }
 `;
 
 export const ContentWrapper = styled.div`

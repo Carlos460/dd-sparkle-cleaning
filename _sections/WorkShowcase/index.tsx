@@ -4,9 +4,9 @@ import * as S from './styles';
 
 const WorkShowcase = () => {
   return (
-    <S.Container>
+    <S.Wrapper>
       <S.Title>Our Work</S.Title>
-      <S.ContentWrapper>
+      <S.Container>
         <S.LeftContent>
           <WorkCarousel />
         </S.LeftContent>
@@ -20,8 +20,8 @@ const WorkShowcase = () => {
             </a>
           </Link>
         </S.RightContent>
-      </S.ContentWrapper>
-    </S.Container>
+      </S.Container>
+    </S.Wrapper>
   );
 };
 

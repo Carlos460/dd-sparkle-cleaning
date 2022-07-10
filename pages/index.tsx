@@ -21,7 +21,7 @@ const Home: NextPage = () => {
         <meta name="description" content="DD Sparkle Cleaning" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
+      <main style={{ overflow: 'hidden' }}>
         <S.Section>
           <Navbar />
           <Row justify="center">
@@ -41,7 +41,7 @@ const Home: NextPage = () => {
         </S.Section>
         <S.Section>
           <Testimonials />
-          <S.Wave style={{ top: '0px', transform: 'scaleY(-1)' }} />
+          <S.Wave style={{ top: '-10px', transform: 'scaleY(-1)' }} />
           <S.Wave />
         </S.Section>
         <Footer />

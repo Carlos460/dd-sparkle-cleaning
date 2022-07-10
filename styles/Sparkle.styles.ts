@@ -9,7 +9,6 @@ export const Section = styled.div<ISectionProps>`
   width: 100%;
 
   position: relative;
-  overflow: hidden;
   background-color: ${(props) => props.backgroundColor || 'transparent'};
 `;
 
@@ -80,7 +79,7 @@ export const Wave = styled.div`
   background-image: url('/static/vectors/wave-1.svg');
   background-size: cover;
   position: absolute;
-  bottom: 0px;
+  bottom: -10px;
   @media (max-width: 800px) {
     height: 100px;
   }
@@ -102,7 +101,7 @@ export const ImageBubble = styled.div`
   width: 800px;
   height: 800px;
   border-radius: 800px;
-  background-image: url('/static/images/clean_glass.webp');
+  background-image: url('/static/images/clean-glass.webp');
   background-size: cover;
   background-position: 0px -300px;
   transform: scale(-1, 1);

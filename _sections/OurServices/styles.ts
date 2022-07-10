@@ -58,7 +58,6 @@ export const BoxContainer = styled.div`
 
 export const Row = styled.div`
   width: 100%;
-  height: 50%;
   margin: 10px 0px;
   display: grid;
   grid-template-columns: auto auto auto;
