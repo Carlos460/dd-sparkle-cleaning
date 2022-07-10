@@ -12,7 +12,7 @@ export const Conatiner = styled.div`
 
 export const WorkImage = styled.div`
   height: 500px;
-  background-image: url('/images/clean_glass.webp');
+  background-image: url('/static/images/clean_glass.webp');
   background-size: center;
   background-position: 0px 700px;
   @media (max-width: 1000px) {

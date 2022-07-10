@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 //SectionContainer
 //Header
@@ -32,7 +32,7 @@ export const Title = styled.div`
   line-height: 80px;
   font-weight: 600;
   font-family: sans-serif;
-  color: ${(props) => props.color || "black"};
+  color: ${(props) => props.color || 'black'};
 
   @media (max-width: 450px) {
     font-size: 40px;
@@ -137,7 +137,7 @@ export const RequestLink = styled.div`
 `;
 
 export const Arrow = styled.div`
-  background-image: url("/icons/Arrow.svg");
+  background-image: url('/static/icons/Arrow.svg');
   background-size: cover;
   height: 20px;
   width: 25px;

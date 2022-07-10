@@ -77,7 +77,7 @@ export const SubTitle = styled.h2<ISubTitleProps>`
 export const Wave = styled.div`
   width: 100%;
   height: 200px;
-  background-image: url('/wave-1.svg');
+  background-image: url('/static/vectors/wave-1.svg');
   background-size: cover;
   position: absolute;
   bottom: 0px;
@@ -89,7 +89,7 @@ export const Wave = styled.div`
 export const Wave2 = styled.div`
   width: 100%;
   height: 600px;
-  background-image: url('/wave-2.svg');
+  background-image: url('static/vectors/wave-2.svg');
   background-size: cover;
   position: absolute;
   bottom: 0px;
@@ -102,7 +102,7 @@ export const ImageBubble = styled.div`
   width: 800px;
   height: 800px;
   border-radius: 800px;
-  background-image: url('/images/clean_glass.webp');
+  background-image: url('/static/images/clean_glass.webp');
   background-size: cover;
   background-position: 0px -300px;
   transform: scale(-1, 1);
