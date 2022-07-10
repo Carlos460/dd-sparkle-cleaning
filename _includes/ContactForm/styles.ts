@@ -115,7 +115,7 @@ export const ProfileImage = styled.div`
   width: 200px;
   height: 200px;
   margin: 0px auto;
-  background-image: url('/vector-profile.svg');
+  background-image: url('static/vectors/profile.svg');
   background-position: center;
   background-repeat: no-repeat;
   @media (max-width: 1100px) {
