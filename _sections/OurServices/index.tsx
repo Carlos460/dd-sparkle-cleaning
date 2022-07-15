@@ -12,7 +12,7 @@ const OurServices = () => {
       <S.Text>
         <div>
           We provide professional cleaning for your home, giving you ample time
-          to focus on on yourself.
+          to focus on yourself.
         </div>
         <br />
         <div>
