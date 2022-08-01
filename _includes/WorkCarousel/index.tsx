@@ -1,4 +1,4 @@
-import {Carousel} from 'antd';
+import { Carousel } from 'antd';
 import * as S from './WorkCarousel.styles';
 
 const WorkCarousel = () => {
@@ -7,13 +7,13 @@ const WorkCarousel = () => {
       <S.WhiteBlock />
       <Carousel autoplay={true} dotPosition="bottom">
         <div>
-          <S.WorkImage />
+          <S.WorkImage urlImage={`/static/images/bathroom.webp`} />
         </div>
         <div>
-          <S.WorkImage />
+          <S.WorkImage urlImage={`/static/images/bedroom.webp`} />
         </div>
         <div>
-          <S.WorkImage />
+          <S.WorkImage urlImage={`/static/images/office.webp`} />
         </div>
       </Carousel>
     </S.Conatiner>
