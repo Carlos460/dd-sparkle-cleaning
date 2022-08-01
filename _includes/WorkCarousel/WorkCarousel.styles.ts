@@ -10,11 +10,14 @@ export const Conatiner = styled.div`
   }
 `;
 
-export const WorkImage = styled.div`
+interface IWorkImageProps {
+  urlImage: string;
+}
+
+export const WorkImage = styled.div<IWorkImageProps>`
   height: 500px;
-  background-image: url('/static/images/clean-glass.webp');
-  background-size: center;
-  background-position: 0px 700px;
+  background-image: url(${(props) => props.urlImage});
+  background-size: cover;
   @media (max-width: 1000px) {
     height: 400px;
   }
