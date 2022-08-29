@@ -1,25 +1,20 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
+import { ZAppointment } from 'lib/validate/appointment';
 import prisma from 'lib/prisma';
-
-interface AppointmentData {
-  key: String;
-  client: String;
-  location: String;
-  date: String;
-  time: String;
-}
+import { Appointment } from '@prisma/client';
+import { IAppointment } from 'lib/type/appointment';
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  const reqData: AppointmentData = req.body || undefined;
+  const reqData: IAppointment = req.body || undefined;
   const hasKeyInReqData = reqData !== undefined ? 'key' in reqData : false;
 
   if (req.method === 'GET' && !hasKeyInReqData) {
     handleGet(res);
   } else if (req.method === 'GET' && hasKeyInReqData) {
-    handleGetAppointment(reqData.key, res);
+    handleGetAppointment(reqData.phone, res);
   } else if (req.method === 'POST') {
     handlePost(reqData, res);
   } else {
@@ -44,17 +39,13 @@ async function handleGetAppointment(_key: any, res: NextApiResponse) {
 }
 
 const handlePost = async (reqData: any, res: NextApiResponse) => {
-  const { key, client, location, date, time } = reqData;
+  try {
+    const validAppointmentData = ZAppointment.parse(reqData); 
 
-  const result = await prisma.appointment.create({
-    data: {
-      key: key,
-      client: client,
-      location: location,
-      date: date,
-      time: time,
-    },
-  });
+    const result = await prisma.appointment.create({ data: validAppointmentData});
 
-  res.status(200).json(result);
+    res.status(200).json(result);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 };

@@ -13,9 +13,18 @@ datasource db {
 
 model Appointment {
   id        String @id @default(auto()) @map("_id") @db.ObjectId  
-  key       String
-  client    String
-  location  String
+  phone     String
+  email     String
+  firstName String
+  lastName  String
+  address   Address
   date      String
   time      String
+}
+
+type Address {
+  street String 
+  city String
+  state String
+  zip String
 }

@@ -26,6 +26,7 @@ async function handlePut(_id: any, _data: any, res: NextApiResponse) {
   });
 
   res.json(result);
+
 }
 
 async function handleDelete(_id: any, res: NextApiResponse) {
@@ -37,3 +38,4 @@ async function handleDelete(_id: any, res: NextApiResponse) {
 
   res.json(result);
 }
+

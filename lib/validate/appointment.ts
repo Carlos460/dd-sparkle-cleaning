@@ -1,0 +1,16 @@
+import z from 'zod';
+
+export const ZAppointment = z.object({
+  phone       : z.string().length(10),
+  email       : z.string().email(),
+  firstName   : z.string().min(1).max(25),
+  lastName    : z.string().min(1).max(25),
+  address     : z.object({
+    street : z.string().min(1).max(25),
+    city   : z.string().min(1).max(25),
+    state  : z.string().min(2),
+    zip    : z.string().min(5).max(4),
+  }),
+  date        : z.string(), 
+  time        : z.string()
+});
