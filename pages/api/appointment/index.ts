@@ -1,8 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { ZAppointment } from 'lib/validate/appointment';
 import prisma from 'lib/prisma';
-import { Appointment } from '@prisma/client';
 import { IAppointment } from 'lib/type/appointment';
+import { ZAppointment } from 'lib/validate/appointment';
 
 export default async function handler(
   req: NextApiRequest,
@@ -28,10 +27,10 @@ const handleGet = async (res: NextApiResponse) => {
   res.status(200).json(appointment);
 };
 
-async function handleGetAppointment(_key: any, res: NextApiResponse) {
+async function handleGetAppointment(phone: any, res: NextApiResponse) {
   const appointment = await prisma.appointment.findMany({
     where: {
-      key: _key,
+      phone: phone,
     },
   });
 
@@ -40,9 +39,11 @@ async function handleGetAppointment(_key: any, res: NextApiResponse) {
 
 const handlePost = async (reqData: any, res: NextApiResponse) => {
   try {
-    const validAppointmentData = ZAppointment.parse(reqData); 
+    const validAppointmentData = ZAppointment.parse(reqData);
 
-    const result = await prisma.appointment.create({ data: validAppointmentData});
+    const result = await prisma.appointment.create({
+      data: validAppointmentData,
+    });
 
     res.status(200).json(result);
   } catch (err) {

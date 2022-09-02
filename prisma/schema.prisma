@@ -18,8 +18,7 @@ model Appointment {
   firstName String
   lastName  String
   address   Address
-  date      String
-  time      String
+  dateTime  String
 }
 
 type Address {

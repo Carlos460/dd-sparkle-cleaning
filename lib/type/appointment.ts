@@ -5,8 +5,7 @@ export interface IAppointment {
   firstName: String;
   lastName: String;
   address: IAddress;
-  date: String;
-  time: String;
+  dateTime: String;
 }
 
 interface IAddress {
