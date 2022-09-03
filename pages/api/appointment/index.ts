@@ -8,36 +8,23 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const reqData: IAppointment = req.body || undefined;
-  const hasKeyInReqData = reqData !== undefined ? 'key' in reqData : false;
 
-  if (req.method === 'GET' && !hasKeyInReqData) {
+  if (req.method === 'GET') {
     handleGet(res);
-  } else if (req.method === 'GET' && hasKeyInReqData) {
-    handleGetAppointment(reqData.phone, res);
   } else if (req.method === 'POST') {
     handlePost(reqData, res);
   } else {
-    res.json('route not found');
+    res.status(404).json('No route found');
   }
 }
 
-const handleGet = async (res: NextApiResponse) => {
+async function handleGet(res: NextApiResponse) {
   const appointment = await prisma.appointment.findMany();
-
-  res.status(200).json(appointment);
-};
-
-async function handleGetAppointment(phone: any, res: NextApiResponse) {
-  const appointment = await prisma.appointment.findMany({
-    where: {
-      phone: phone,
-    },
-  });
 
   res.status(200).json(appointment);
 }
 
-const handlePost = async (reqData: any, res: NextApiResponse) => {
+async function handlePost(reqData: any, res: NextApiResponse) {
   try {
     const validAppointmentData = ZAppointment.parse(reqData);
 
@@ -49,4 +36,4 @@ const handlePost = async (reqData: any, res: NextApiResponse) => {
   } catch (err) {
     res.status(500).json(err);
   }
-};
+}
