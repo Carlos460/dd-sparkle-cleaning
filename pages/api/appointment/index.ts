@@ -19,9 +19,13 @@ export default async function handler(
 }
 
 async function handleGet(res: NextApiResponse) {
-  const appointment = await prisma.appointment.findMany();
+  try {
+    const appointment = await prisma.appointment.findMany();
 
-  res.status(200).json(appointment);
+    res.status(200).json({ success: true, message: appointment });
+  } catch (err) {
+    res.status(500).json({ success: false, message: 'enternal server error' });
+  }
 }
 
 async function handlePost(reqData: any, res: NextApiResponse) {
