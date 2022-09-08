@@ -8,25 +8,13 @@ export default async function handler(
   const { id } = req.query || undefined;
   const data = req.body;
 
-  if (req.method === 'GET') {
-    handleGet(data, res);
-  } else if (req.method === 'PUT') {
+  if (req.method === 'PUT') {
     handlePut(id, data, res);
   } else if (req.method === 'DELETE') {
     handleDelete(id, res);
   } else {
-    res.json({ error: 'error interal server' });
+    res.json({ success: false, message: 'route not found' });
   }
-}
-
-async function handleGet(phone: any, res: NextApiResponse) {
-  const appointment = await prisma.appointment.findMany({
-    where: {
-      phone: phone,
-    },
-  });
-
-  res.status(200).json(appointment);
 }
 
 async function handlePut(id: any, data: any, res: NextApiResponse) {

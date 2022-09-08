@@ -9,8 +9,10 @@ export default async function handler(
 ) {
   const reqData: IAppointment = req.body || undefined;
 
-  if (req.method === 'GET') {
-    handleGet(res);
+  if (req.method === 'GET' && reqData === undefined) {
+    handleGetAll(res);
+  } else if (req.method === 'GET') {
+    handleGet(reqData.phone, res);
   } else if (req.method === 'POST') {
     handlePost(reqData, res);
   } else {
@@ -18,13 +20,35 @@ export default async function handler(
   }
 }
 
-async function handleGet(res: NextApiResponse) {
+async function handleGetAll(res: NextApiResponse) {
   try {
     const appointment = await prisma.appointment.findMany();
 
     res.status(200).json({ success: true, message: appointment });
   } catch (err) {
     res.status(500).json({ success: false, message: 'enternal server error' });
+  }
+}
+
+async function handleGet(phone: any, res: NextApiResponse) {
+  const response = await ZAppointment.partial().safeParse({ phone: phone });
+
+  if (!response.success) {
+    res
+      .status(500)
+      .json({ success: false, message: response.error.issues[0].message });
+  } else {
+    const appointment = await prisma.appointment.findMany({
+      where: {
+        // @ts-ignore TS not getting zod data key when succes is true
+        phone: response.data.phone,
+      },
+    });
+    appointment.length > 0
+      ? res.status(200).json({ success: true, message: appointment })
+      : res
+          .status(500)
+          .json({ success: false, message: 'appointment not found' });
   }
 }
 
