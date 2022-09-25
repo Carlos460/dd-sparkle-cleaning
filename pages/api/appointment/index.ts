@@ -31,17 +31,12 @@ async function handleGetAll(res: NextApiResponse) {
 }
 
 async function handleGet(phone: any, res: NextApiResponse) {
-  const response = await ZAppointment.partial().safeParse({ phone: phone });
+  const validResult = await ZAppointment.partial().safeParse({ phone: phone });
 
-  if (!response.success) {
-    res
-      .status(500)
-      .json({ success: false, message: response.error.issues[0].message });
-  } else {
+  if (validResult.success) {
     const appointment = await prisma.appointment.findMany({
       where: {
-        // @ts-ignore TS not getting zod data key when succes is true
-        phone: response.data.phone,
+        phone: validResult.data.phone,
       },
     });
     appointment.length > 0
@@ -49,19 +44,21 @@ async function handleGet(phone: any, res: NextApiResponse) {
       : res
           .status(500)
           .json({ success: false, message: 'appointment not found' });
+  } else {
+    res.status(500).json({ success: false, message: validResult.error });
   }
 }
 
 async function handlePost(reqData: any, res: NextApiResponse) {
-  try {
-    const validAppointmentData = ZAppointment.parse(reqData);
+  const validResult = ZAppointment.safeParse(reqData);
 
-    const result = await prisma.appointment.create({
-      data: validAppointmentData,
+  if (validResult.success) {
+    const appointment = await prisma.appointment.create({
+      data: validResult.data,
     });
 
-    res.status(200).json(result);
-  } catch (err) {
-    res.status(500).json(err);
+    res.status(200).json({ success: true, message: appointment });
+  } else {
+    res.status(500).json({ success: false, message: validResult.error });
   }
 }

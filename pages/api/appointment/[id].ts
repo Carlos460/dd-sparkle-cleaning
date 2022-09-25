@@ -19,31 +19,31 @@ export default async function handler(
 }
 
 async function handlePut(id: any, data: any, res: NextApiResponse) {
-  const response = await ZAppointment.partial().safeParse(data.update);
+  const validResult = await ZAppointment.partial().safeParse(data.update);
 
-  if (response.success === true) {
-    const result = await prisma.appointment.update({
+  if (validResult.success === true) {
+    const appointment = await prisma.appointment.update({
       where: {
         id: id,
       },
-      data: response.data,
+      data: validResult.data,
     });
 
-    res.json(result);
+    res.json({ success: true, message: appointment });
   } else {
-    res.status(400).json({ success: false, message: response.error });
+    res.status(400).json({ success: false, message: validResult.error });
   }
 }
 
 async function handleDelete(id: any, res: NextApiResponse) {
   try {
-    const userDeleted = await prisma.appointment.delete({
+    const appointment = await prisma.appointment.delete({
       where: { id: id },
     });
 
     res.status(200).json({
       sucess: true,
-      message: `${userDeleted.firstName} ${userDeleted.lastName} was deleted`,
+      message: `${appointment.firstName} ${appointment.lastName} was deleted`,
     });
   } catch (err) {
     res.status(400).json({ success: false, message: 'user not found' });
