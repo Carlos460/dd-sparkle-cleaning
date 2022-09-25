@@ -8,11 +8,9 @@ export const ZAppointment = z.object({
   email: z.string().email(),
   firstName: z.string().min(1).max(25),
   lastName: z.string().min(1).max(25),
-  address: z.object({
-    street: z.string().min(1).max(25),
-    city: z.string().min(1).max(25),
-    state: z.string().min(2),
-    zip: z.string().min(5).max(9),
-  }),
+  street: z.string().min(1).max(25),
+  city: z.string().min(1).max(25),
+  state: z.string().length(2),
+  zip: z.string().min(5).max(9),
   dateTime: z.string(),
 });

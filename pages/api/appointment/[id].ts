@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import prisma from 'lib/prisma';
+import { ZAppointment } from 'lib/validate/appointment';
 
 export default async function handler(
   req: NextApiRequest,
@@ -18,14 +19,20 @@ export default async function handler(
 }
 
 async function handlePut(id: any, data: any, res: NextApiResponse) {
-  const result = prisma.appointment.update({
-    where: {
-      id: id,
-    },
-    data: data,
-  });
+  const response = await ZAppointment.partial().safeParse(data.update);
 
-  res.json(result);
+  if (response.success === true) {
+    const result = await prisma.appointment.update({
+      where: {
+        id: id,
+      },
+      data: response.data,
+    });
+
+    res.json(result);
+  } else {
+    res.status(400).json({ success: false, message: response.error });
+  }
 }
 
 async function handleDelete(id: any, res: NextApiResponse) {

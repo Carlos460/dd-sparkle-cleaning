@@ -4,13 +4,9 @@ export interface IAppointment {
   email: String;
   firstName: String;
   lastName: String;
-  address: IAddress;
-  dateTime: String;
-}
-
-interface IAddress {
   street: String;
   city: String;
   state: String;
   zip: String;
+  dateTime: String;
 }
