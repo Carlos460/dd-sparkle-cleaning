@@ -31,7 +31,7 @@ async function handleGetAll(res: NextApiResponse) {
 }
 
 async function handleGet(phone: any, res: NextApiResponse) {
-  const validResult = await ZAppointment.partial().safeParse({ phone: phone });
+  const validResult = ZAppointment.partial().safeParse({ phone: phone });
 
   if (validResult.success) {
     const appointment = await prisma.appointment.findMany({
