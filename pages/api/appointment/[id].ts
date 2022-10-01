@@ -19,7 +19,7 @@ export default async function handler(
 }
 
 async function handlePut(id: any, data: any, res: NextApiResponse) {
-  const validResult = await ZAppointment.partial().safeParse(data.update);
+  const validResult = ZAppointment.partial().safeParse(data.update);
 
   if (validResult.success === true) {
     const appointment = await prisma.appointment.update({
