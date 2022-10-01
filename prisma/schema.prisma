@@ -1,0 +1,28 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+// TODO:
+// - break the Address type fields and put the fields in the appointment model
+
+model Appointment {
+  id        String @id @default(auto()) @map("_id") @db.ObjectId  
+  phone     String
+  email     String
+  firstName String
+  lastName  String
+  street    String 
+  city      String
+  state     String
+  zip       String
+  dateTime  String
+}
