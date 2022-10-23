@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react';
 
 const colorThemes = {
   default: {
-    bgColor: 'transparent',
+    bgColor: 'white',
     textColor: 'black',
     hoverTextColor: 'var(--primary)',
   },
@@ -24,15 +24,36 @@ const Navbar = (props: { theme?: string }) => {
   const [position, setPosition] = useState('-300px');
   const [opacity, setOpacity] = useState('0');
   const [pointerEvents, setPointerEvents] = useState('none');
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const handleScroll = () => {
+    const position = window.scrollY;
+    setScrollPosition(position);
+  };
 
   useEffect(() => {
+    // Hamburger Interaction
     isActive ? setPosition('0px') : setPosition('-300px');
     isActive ? setOpacity('1') : setOpacity('0');
     isActive ? setPointerEvents('auto') : setPointerEvents('none');
+
+    // Scroll offset to calc navbar height
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, [isActive]);
 
   return (
-    <S.Wrapper bgColor={theme.bgColor}>
+    <S.Wrapper
+      bgColor={theme.bgColor}
+      textColor={theme.textColor}
+      hoverTextColor={theme.hoverTextColor}
+      boxshadowState={`${
+        scrollPosition > 0 ? 'rgba(0, 0, 0, 0.16) 0px 1px 4px;' : 'none'
+      }`}
+    >
       <S.HamListWrapper
         opacity={opacity}
         pointerEvents={pointerEvents}
@@ -66,8 +87,10 @@ const Navbar = (props: { theme?: string }) => {
       <Row justify="center">
         <Col xs={22} sm={18} lg={20} xxl={14}>
           <S.Container
+            bgColor={theme.bgColor}
             textColor={theme.textColor}
             hoverTextColor={theme.hoverTextColor}
+            heightState={scrollPosition > 0 ? '65px' : '80px'}
           >
             <S.BrandName>
               <Link href={`/`}>

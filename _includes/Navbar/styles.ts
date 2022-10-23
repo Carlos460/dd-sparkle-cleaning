@@ -1,17 +1,20 @@
-import { debug } from 'console';
 import styled from 'styled-components';
-import { rootCertificates } from 'tls';
-import { isNativeError } from 'util/types';
 
-interface IContainerProps {
-  bgColor?: string;
-  textColor?: string;
-  hoverTextColor?: string;
+interface IThemeProps {
+  bgColor: string;
+  textColor: string;
+  hoverTextColor: string;
+  heightState?: string;
+  boxshadowState?: string;
 }
 
-export const Wrapper = styled.div<IContainerProps>`
-  background-color: ${(props) => props.bgColor || 'transparent'};
-  position: relative;
+export const Wrapper = styled.div<IThemeProps>`
+  background-color: ${(props) => props.bgColor};
+  width: 100%;
+  position: fixed;
+  z-index: 20;
+  box-shadow: ${(props) => props.boxshadowState};
+  transition: background-color 0.2s ease, box-shadow 0.1s ease;
 `;
 
 export const HamburgerWrapper = styled.div`
@@ -102,44 +105,48 @@ export const HamItem = styled.li`
   }
 `;
 
-export const Container = styled.div<IContainerProps>`
+export const Container = styled.div<IThemeProps>`
   width: 100%;
-  height: 70px;
+  height: ${(props) => props.heightState};
 
   display: flex;
   justify-content: space-between;
 
+  transition: height 0.2s ease;
+
   & > div > a {
-    color: ${(props) => props.textColor || 'transparent'};
+    color: ${(props) => props.textColor};
   }
   & > div > a:hover {
-    color: ${(props) => props.hoverTextColor || 'transparent'};
+    color: ${(props) => props.hoverTextColor};
   }
   & > ul > li > a {
-    color: ${(props) => props.textColor || 'transparent'};
+    color: ${(props) => props.textColor};
     text-decoration: none;
   }
   & > ul > li > a:hover {
-    color: ${(props) => props.hoverTextColor || 'transparent'};
+    color: ${(props) => props.hoverTextColor};
   }
 `;
 
 export const BrandName = styled.div`
-  font-size: 20px;
+  font-size: 28px;
   font-family: sans-serif;
   margin: auto 0px;
 `;
 
 export const NavList = styled.ul`
-  width: 250px;
   margin: auto 0px;
 
   list-style: none;
   display: flex;
+  gap: 40px;
   justify-content: space-between;
   @media (max-width: 1000px) {
     display: none;
   }
 `;
 
-export const NavLink = styled.li``;
+export const NavLink = styled.li`
+  font-size: 21px;
+`;
