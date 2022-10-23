@@ -5,6 +5,7 @@ interface IThemeProps {
   textColor: string;
   hoverTextColor: string;
   heightState?: string;
+  boxshadowState?: string;
 }
 
 export const Wrapper = styled.div<IThemeProps>`
@@ -12,7 +13,8 @@ export const Wrapper = styled.div<IThemeProps>`
   width: 100%;
   position: fixed;
   z-index: 20;
-  transition: background-color 0.5s ease;
+  box-shadow: ${(props) => props.boxshadowState};
+  transition: background-color 0.2s ease, box-shadow 0.1s ease;
 `;
 
 export const HamburgerWrapper = styled.div`
@@ -146,5 +148,5 @@ export const NavList = styled.ul`
 `;
 
 export const NavLink = styled.li`
-  font-size: 23px;
+  font-size: 21px;
 `;
