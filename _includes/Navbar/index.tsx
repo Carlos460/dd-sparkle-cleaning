@@ -50,6 +50,9 @@ const Navbar = (props: { theme?: string }) => {
       bgColor={theme.bgColor}
       textColor={theme.textColor}
       hoverTextColor={theme.hoverTextColor}
+      boxshadowState={`${
+        scrollPosition > 0 ? 'rgba(0, 0, 0, 0.16) 0px 1px 4px;' : 'none'
+      }`}
     >
       <S.HamListWrapper
         opacity={opacity}
