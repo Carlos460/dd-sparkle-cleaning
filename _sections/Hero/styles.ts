@@ -1,15 +1,15 @@
-import { WrappedBuildError } from 'next/dist/server/base-server';
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   min-height: 800px;
+  padding: 150px 0px 0px;
 `;
 
 export const CtaButton = styled.button`
   height: 45px;
   margin: 20px 0px 0px;
   padding: 0px 10px;
-  font-size: 17px;
+  font-size: 21px;
 
   color: white;
   background-color: var(--primary);

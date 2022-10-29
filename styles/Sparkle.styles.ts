@@ -20,7 +20,7 @@ interface ITitleProps {
 
 export const Title = styled.h1<ITitleProps>`
   width: 600px;
-  margin-top: 100px;
+  margin: 100px 0px 0px;
 
   color: ${(props) => props.textColor || 'black'};
   font-family: sans-serif;
@@ -63,13 +63,11 @@ export const SubTitle = styled.h2<ISubTitleProps>`
 
   font-weight: 500;
   color: ${(props) => props.textColor || 'black'};
-  font-size: ${(props) => props.textSize || '20px'};
+  font-size: ${(props) => props.textSize || '24px'};
   line-height: ${(props) => props.lineHieght || '25px'};
   /* antd lg screens */
   @media (max-width: 768px) {
     margin: 12px 0px 0px;
-
-    font-size: 18px;
   }
 `;
 
