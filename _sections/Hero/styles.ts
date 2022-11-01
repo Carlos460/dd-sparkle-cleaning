@@ -7,9 +7,9 @@ export const Wrapper = styled.div`
 
 export const CtaButton = styled.button`
   height: 45px;
-  margin: 20px 0px 0px;
+  margin: 40px 0px 0px;
   padding: 0px 10px;
-  font-size: 21px;
+  font-size: 20px;
 
   color: white;
   background-color: var(--primary);

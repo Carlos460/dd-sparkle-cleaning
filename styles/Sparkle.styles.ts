@@ -63,8 +63,9 @@ export const SubTitle = styled.h2<ISubTitleProps>`
 
   font-weight: 500;
   color: ${(props) => props.textColor || 'black'};
-  font-size: ${(props) => props.textSize || '24px'};
-  line-height: ${(props) => props.lineHieght || '25px'};
+  font-size: ${(props) => props.textSize || '22px'};
+  line-height: ${(props) => props.lineHieght || '30px'};
+  letter-spacing: 1px;
   /* antd lg screens */
   @media (max-width: 768px) {
     margin: 12px 0px 0px;
