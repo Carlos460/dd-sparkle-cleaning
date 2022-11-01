@@ -14,12 +14,10 @@ export const SectionContainer = styled.div`
   flex-direction: column;
   height: 100%;
   max-width: 75%;
-  margin: 10rem auto 5rem auto;
+  margin: 275px auto 50px;
   @media (max-width: 800px) {
     max-width: 100%;
-  }
-
-  @media (max-width: 450px) {
+    margin: 160px 0px 50px;
   }
 `;
 

@@ -9,7 +9,7 @@ import styled from 'styled-components';
 // Buttons
 
 export const SectionContainer = styled.div`
-  margin: 50px 0px;
+  margin: 120px 0px;
   min-height: 100vh;
   width: 100%;
 `;
