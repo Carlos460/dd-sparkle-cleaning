@@ -42,7 +42,7 @@ export const Title = styled.h1<ITitleProps>`
   @media (max-width: 768px) {
     width: 450px;
     font-size: 50px;
-    line-height: 40px;
+    line-height: 50px;
   }
   /* antd xs screens */
   @media (max-width: 480px) {
