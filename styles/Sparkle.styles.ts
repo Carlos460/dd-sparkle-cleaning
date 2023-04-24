@@ -24,9 +24,9 @@ export const Title = styled.h1<ITitleProps>`
 
   color: ${(props) => props.textColor || 'black'};
   font-family: sans-serif;
-  font-size: 65px;
+  font-size: 55px;
   font-weight: 600;
-  line-height: 70px;
+  line-height: 55px;
   & > span {
     font-family: sans-serif;
   }
@@ -61,11 +61,10 @@ export const SubTitle = styled.h2<ISubTitleProps>`
   width: 400px;
   margin: 20px 0px 0px;
 
-  font-weight: 500;
   color: ${(props) => props.textColor || 'black'};
-  font-size: ${(props) => props.textSize || '22px'};
+  font-size: ${(props) => props.textSize || '16px'};
   line-height: ${(props) => props.lineHieght || '30px'};
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   /* antd lg screens */
   @media (max-width: 768px) {
     margin: 12px 0px 0px;
@@ -97,9 +96,9 @@ export const Wave2 = styled.div`
 `;
 
 export const ImageBubble = styled.div`
-  width: 800px;
-  height: 800px;
-  border-radius: 800px;
+  width: 700px;
+  height: 700px;
+  border-radius: 700px;
   background-image: url('/static/images/clean-glass.webp');
   background-size: cover;
   background-position: 0px -300px;
@@ -107,7 +106,7 @@ export const ImageBubble = styled.div`
   z-index: -1;
 
   position: absolute;
-  bottom: 0px;
+  bottom: -25px;
   right: -100px;
   transition: width 0.4s, height 0.4s, border-radius 0.4s, bottom 0.4s,
     right 0.4s, background-position 0.4s;
